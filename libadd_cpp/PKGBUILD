@@ -1,0 +1,30 @@
+pkgname=libadd_cpp
+pkgver=0.0.1
+pkgrel=1
+pkgdesc="a small C++ project to show CMake, libraray adds two ints and returns the sum"
+arch=('i686' 'x86_64' 'armv7h')
+url="https://github.com/majorx234/libadd_cpp"
+license=('GPLv2')
+#depends=('')
+makedepends=('cmake' 'git')
+_dir=${pkgname}
+source=("${_dir}"::"git+https://github.com/majorx234/libadd_cpp.git")
+md5sums=('SKIP')
+
+build() {
+  # Create build directory
+  [ -d ${srcdir}/build ] || mkdir ${srcdir}/build
+  cd ${srcdir}/build
+
+  cmake ${srcdir}/$pkgname \
+        -DCMAKE_INSTALL_PREFIX=/usr 
+  make 
+}
+
+package() {
+   cd "${srcdir}/build"
+   make DESTDIR="$pkgdir/" install
+}
+
+# vim:set ts=2 sw=2 et:
+
