@@ -1,0 +1,14 @@
+pkgbase = python-mul
+	pkgdesc = python packages, multiplies to integers, takes two arguments as input.
+	pkgver = 1.1
+	pkgrel = 1
+	url = https://github.com/majorx234/python-mul
+	arch = any
+	makedepends = python
+	makedepends = python-setuptools
+	depends = python
+	source = mul::git+https://github.com/majorx234/python-mul.git
+	md5sums = SKIP
+
+pkgname = python-mul
+

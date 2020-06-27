@@ -1,0 +1,26 @@
+pkgname=python-mul
+pkgver=1.1
+pkgrel=1
+pkgdesc="python packages, multiplies to integers, takes two arguments as input."
+arch=("any")
+depends=('python')
+makedepends=('python' 'python-setuptools')
+url="https://github.com/majorx234/python-mul"
+_dir="mul"
+source=("${_dir}"::"git+https://github.com/majorx234/python-mul.git")
+md5sums=('SKIP')
+
+build() {
+  cd "${srcdir}/${_dir}"
+  python setup.py build
+}
+
+check() {
+  cd "${_dir}"
+  python "mul/test_mul.py"
+}
+
+package() {
+  cd "${_dir}"
+  python setup.py install --root="$pkgdir/" --optimize=1 --skip-build
+}
