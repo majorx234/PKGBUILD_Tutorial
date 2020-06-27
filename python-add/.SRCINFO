@@ -1,7 +1,7 @@
 pkgbase = python-add
 	pkgdesc = python packages, Adds to integers, takes two arguments as input.
-	pkgver = 1.1
-	pkgrel = 2
+	pkgver = 1.2
+	pkgrel = 1
 	url = https://github.com/majorx234/python-add
 	arch = any
 	makedepends = python
