@@ -6,6 +6,7 @@ pkgbase = python-add
 	arch = any
 	makedepends = python
 	makedepends = python-setuptools
+	depends = python
 	source = add::git+https://github.com/majorx234/python-add.git
 	md5sums = SKIP
 
